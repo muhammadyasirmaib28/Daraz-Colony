@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daraz.pk</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        html,body{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(236, 234, 234, 0.655);
+        }
+        .header{
+            width: 100%;
+            height: 20px;
+            background-color: orangered;
+            position: fixed;
+        }
+        .header ul{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+        .header ul li{
+            list-style: none;
+            font-size: 12px;
+            font-weight: lighter;
+            margin: 5px 25px;
+            color: white;
+            cursor: pointer;
+        }
+        .header ul li:hover{
+            color: rgb(255, 189, 66);
+        }
+        .fake-header{
+            width: 100%;
+            height: 20px;
+            background-color: orangered;
+        }
+        nav{
+            width: 100%;
+            height: 120px;
+            background-color: orangered;
+            display: flex;
+            position: fixed;
+        }
+        nav .logo{
+            width: 150px;
+            height: 130px;
+            object-fit: cover;
+            overflow: hidden;
+            margin: 40px 70px;
+            cursor: pointer;
+        }
+        nav .logo img{
+            width: 100%;
+            height: 1000;
+        }
+        nav .search-bar{
+            background-color: white;
+            width: 550px;
+            height: 48px;
+            margin-top: 40px;
+            padding: 15px;
+            color: gray;
+            font-size: small;
+            display: flex;
+        }
+        nav p{
+            color: orangered;
+            background-color: rgb(255, 210, 188);
+            font-size: 1.4rem;
+            font-weight: 200;
+            width: 50px;
+            height: 48px;
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        nav .icon{
+            margin-top: 50px;
+            font-size: 1.9rem;
+            margin-left: 40px;
+            color: white;
+            cursor: pointer;
+        }
+        .fake-nav{
+            width: 100%;
+            height: 120px;
+            background-color: orangered;
+        }
+        .section-one{
+            width: 85%;
+            height: 400px;
+            object-fit: cover;
+            overflow: hidden;
+            margin-left: 35px;
+            cursor: pointer;
+        }
+        .section-one img{
+            width: 100%;
+            height: 100%;
+        }
+        .section-two{
+            width: 95%;
+            height: 150px;
+            object-fit: cover;
+            overflow: hidden;
+            margin-left: 35px;
+            margin-top: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .section-two img{
+            width: 100%;
+            height: 100%;
+        }
+        .section-three p{
+            margin: 5px 0;
+            margin-left: 35px;
+            font-size: x-large;
+            color: black;
+        }
+        .section-three .head{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            width: 95%;
+            height: 60px;
+            border-bottom: 1.1px rgba(166, 166, 166, 0.555) solid;
+            margin-left: 35px;
+            color: orangered;
+        }
+        .section-three .head small{
+            margin-left: 18px;
+            font-weight: bold;
+        }
+        .section-three .head .button{
+            padding: 10px;
+            border: orangered 1px solid;
+            margin-right: 12px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .section-four .box{
+            width: 95%;
+            height: 360px;
+            margin-left: 35px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            margin-top: 3px;
+        }
+        .section-four .img{
+            width: 185px;
+            height: 320px;
+            object-fit: cover;
+            overflow: hidden;
+            background-color: white;
+            cursor: pointer;
+        }
+        .section-four .img img{
+            width: 100%;
+            height: 65%;
+        }
+        .section-four .img p{
+            margin-top: 3px;
+            margin-left: 9px;
+            font-size: medium;
+            margin-bottom: 10px;
+        }
+        .section-four .img big{
+            color: orangered;
+            margin-left: 9px;
+        }
+        .section-four .img del{
+            margin-left: 9px;
+            margin-top: 10px;
+        }
+        span{
+            color: orangered;
+        }
+        .section-five p{
+            margin-bottom: 10px;
+            margin-left: 35px;
+            font-size: xx-large;
+        }
+        .section-five .box1{
+            width: 95%;
+            height: 165px;
+            background-color: white;
+            margin-left: 35px;
+            display: flex;
+        }
+        .section-five .shape{
+            width: 202px;
+            height: 165px;
+            background-color: white;
+            border-left: 1px solid rgba(166, 166, 166, 0.555);
+            border-right: 1px solid rgba(166, 166, 166, 0.555);
+            cursor: pointer;
+        }
+        .section-five .shape .pic{
+            width: 110px;
+            height: 100px;
+            border: 1px solid white;
+            margin-top: 20px;
+            margin-left: 45px;
+            object-fit: cover;
+            overflow: hidden;
+        }
+        .section-five .pic img{
+            width: 100%;
+            height: 100%;
+        }
+        .section-five .shape p{
+            font-size: 15px;
+            margin-left: 54px;
+            color: black;
+            margin-top: 7px;
+        }
+        .section-six .box2{
+            width: 95%;
+            height: 165px;
+            background-color: white;
+            margin-left: 35px;
+            display: flex;
+        }
+        .section-six .shape-again{
+            width: 202px;
+            height: 165px;
+            background-color: white;
+            border-left: 1px solid rgba(166, 166, 166, 0.555);
+            border-right: 1px solid rgba(166, 166, 166, 0.555);
+            border-top: 1px solid rgba(166, 166, 166, 0.555);
+            cursor: pointer;
+        }
+        .section-six .shape-again .pic-again{
+            width: 110px;
+            height: 100px;
+            border: 1px solid white;
+            margin-top: 20px;
+            margin-left: 45px;
+            object-fit: cover;
+            overflow: hidden;
+        }
+        .section-six .pic-again img{
+            width: 100%;
+            height: 100%;
+        }
+        .section-six .shape-again p{
+            font-size: 15px;
+            margin-left: 54px;
+            color: black;
+            margin-top: 7px;
+        }
+        .section-seven{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .section-seven .last-b{
+            width: 450px;
+            height: 40px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: large;
+            border: 1px solid rgba(0, 186, 248, 0.749);
+            color: rgba(0, 186, 248, 0.749);
+            cursor: pointer;
+        }
+        .section-last{
+            display: flex;
+            justify-content: space-around;
+        }
+        .section-last .part1{
+            margin-top: 80px;
+            color: rgb(0, 0, 57);
+        }
+        .section-last .part1 h3{
+            margin-bottom: 10px;
+            color: rgb(0, 0, 57);
+        }
+        .section-last .part1 p{
+            font-size: 12px;
+            font-weight: lighter;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+        .section-last .part2{
+            margin-top: 80px;
+            color: rgb(0, 0, 57); 
+        }
+        .section-last .part2 h3{
+            margin-bottom: 10px;
+            color: rgb(0, 0, 57);
+        }
+        .section-last .part2 p{
+            font-size: 12px;
+            font-weight: lighter;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+        .section-last .part3{
+            display: flex;
+            margin-top: 80px;
+        }
+        .section-last .photo{
+            width: 110px;
+            height: 60px;
+            object-fit: cover;
+            overflow: hidden;
+            margin-left: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .section-last .photo img{
+            width: 100%;
+            height: 100%;
+        }
+        .country pre{
+            margin-top: 210px;
+            width: 100%;
+            background-color: white;
+            color: black;
+            padding: 15px;
+            font-size: large;
+        }
+        .footer{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+        }
+        .footer .flag{
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            overflow: hidden;
+            border-radius: 50%;
+            display: flex;
+            cursor: pointer;
+            margin-left: 30px;
+        }
+        .footer .flag img{
+            width: 100%;
+            height: 100%;
+        }
+        .footer .follow{
+            display: flex;
+            margin-left: 160px;
+        }
+        .footer .last{
+            margin-left: 250px;
+            font-size: larger;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <ul>
+                <li>SAVE MORE ON APP</li>
+                <li>SALE DARAZ</li>
+                <li>HELP & SUPPORT</li>
+                <li>LOGIN</li>
+                <li>SIGN UP</li>
+                <li>Change Language</li>
+            </ul>
+        </div>
+        <div class="fake-header"></div>
+        <nav>
+            <div class="logo">
+                <img src="3b870cb043c7f8a9741cbf66329e294e.png" alt="">
+            </div>
+            <div class="search-bar">Search in Daraz</div>
+            <p><i class="ri-search-line"></i></p>
+            <div class="icon"><i class="ri-shopping-cart-line"></i></div>
+        </nav>
+        <div class="fake-nav"></div>
+    </header>
+    <main>
+        <section>
+            <div class="section-one">
+                <img src="daraz img.jpg" alt="">
+            </div>
+            <div class="section-two">
+                <img src="daraz img2.jpg" alt="">
+            </div>
+            <div class="section-three">
+                <p>Flash Sale</p>
+                <div class="head">
+                    <small>On Sale Now</small>
+                    <div class="button">SHOW ALL PRODUCTS</div>
+                </div>
+            </div>
+            <div class="section-four">
+                <div class="box">
+                    <div class="img">
+                        <img src="img01.jpg" alt="">
+                        <p>Chia Seeds 120g Organic <br> Export Quality</p>
+                        <big>Rs.196</big>
+                        <br>
+                        <small><del>Rs.499</del><span>-61%</span></small>
+                    </div>
+                    <div class="img">
+                        <img src="9ada4627a1293b0543cb26c35373e70c.png_400x400q80.png" alt="">
+                        <p>CHiQ- SDH-18RD (20,000 Plus More BTUs)- 1.5 Ton</p>
+                        <big>Rs.145,999</big>
+                        <br>
+                        <small><del>Rs.193,999</del><span>-25%</span></small>
+                    </div>
+                    <div class="img">
+                        <img src="img2.png" alt="">
+                        <p>Airpod Pro Air Pro TWS Airpods Wireless Earbuds</p>
+                        <big>Rs.929</big>
+                        <br>
+                        <small><del>Rs.3999</del><span>-77%</span></small>
+                    </div>
+                    <div class="img">
+                        <img src="img3.jpg" alt="">
+                        <p>M10 , A6s , F2 earbuds Headphones,Handfree,EarPhone, Bluetooth</p>
+                        <big>Rs.374</big>
+                        <br>
+                        <small><del>Rs.999</del><span>-63%</span></small>
+                    </div>
+                    <div class="img">
+                        <img src="img4.jpg" alt="">
+                        <p>AirPods_Pro (2nd Generation) Titanium Wireless Earbuds,</p>
+                        <big>Rs.787</big>
+                        <br>
+                        <small><del>Rs.4000</del><span>-80%</span></small>
+                    </div>
+                    <div class="img">
+                        <img src="img5.jpg" alt="">
+                        <p>TWS I12 & i7s Airpods with Super Sound & High</p>
+                        <big>Rs.1243</big>
+                        <br>
+                        <small><del>Rs.3999</del><span>-69%</span></small>
+                    </div>
+                </div>
+                <div class="section-five">
+                    <p>Categories</p>
+                    <div class="box1">
+                        <div class="shape">
+                            <div class="pic">
+                                <img src="ed.jpg" alt="">
+                            </div>
+                            <p>3D Printers</p>
+                        </div>
+                        <div class="shape">
+                            <div class="pic">
+                                <img src="pasta.jpg" alt="">
+                            </div>
+                            <p>Passta Noddels & <br> Pizza Tools</p>
+                        </div>
+                        <div class="shape">
+                            <div class="pic">
+                                <img src="pots.jpg" alt="">
+                            </div>
+                            <p>Casserole Pots</p>
+                        </div>
+                        <div class="shape">
+                            <div class="pic">
+                                <img src="replace.png" alt="">
+                            </div>
+                            <p>Replacement</p>
+                        </div>
+                        <div class="shape">
+                            <div class="pic">
+                                <img src="screen.jpg" alt="">
+                            </div>
+                            <p>Screen Protector</p>
+                        </div>
+                        <div class="shape">
+                            <div class="pic">
+                                <img src="toy.jpg" alt="">
+                            </div>
+                            <p>Toy Boxes & <br>
+                            Organisers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-six">
+                    <div class="box2">
+                        <div class="shape-again">
+                            <div class="pic-again">
+                                <img src="sim.jpg" alt="">
+                            </div>
+                            <p>SIM Tools</p>
+                        </div>
+                        <div class="shape-again">
+                            <div class="pic-again">
+                                <img src="equ.jpg" alt="">
+                            </div>
+                            <p>Equipment Bags</p>
+                        </div>
+                        <div class="shape-again">
+                            <div class="pic-again">
+                                <img src="heat.jpg" alt="">
+                            </div>
+                            <p>Heatsinks</p>
+                        </div>
+                        <div class="shape-again">
+                            <div class="pic-again">
+                                <img src="hoodies.jpg" alt="">
+                            </div>
+                            <p>Hoodies & <br> Sweetshirts</p>
+                        </div>
+                        <div class="shape-again">
+                            <div class="pic-again">
+                                <img src="ds.jpg" alt="">
+                            </div>
+                            <p>Dining Sets</p>
+                        </div>
+                        <div class="shape-again">
+                            <div class="pic-again">
+                                <img src="micro.jpg" alt="">
+                            </div>
+                            <p>Microphones</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-seven">
+                    <div class="last-b"><p>LOAD MORE</p></div>
+                </div>
+                <div class="section-last">
+                    <div class="part1">
+                        <h3>Customer Care</h3>
+                        <p>Help Center</p>
+                        <p>How To Buy</p>
+                        <p>Contact Us</p>
+                        <p>Daraz Pick Up Points</p>
+                        <p>Daraz Shop</p>
+                        <p>Purchase Protection</p>
+                        <p>Returns & Refunds</p>
+                        <p>Corporate & Bluck Purchasing</p>
+                    </div>
+                    <div class="part2">
+                        <h3>Daraz</h3>
+                        <p>About Us</p>
+                        <p>Digital Payments</p>
+                        <p>Daraz Donates</p>
+                        <p>Daraz Blog</p>
+                        <p>Terms & Conditions</p>
+                        <p>Privacy Policy</p>
+                        <p>NTN_Number : 4012186-6</p>
+                        <p>Online Shopping App</p>
+                        <p>Sell on Daraz</p>
+                    </div>
+                    <div class="part3">
+                        <div class="icon1">
+                            <div class="photo">
+                                <img src="appstore.png" alt="">
+                            </div>
+                            <div class="photo">
+                                <img src="google.png" alt="">
+                            </div>
+                        </div>
+                        <div class="icon2">
+                            <div class="photo">
+                                <img src="gallery.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <footer>
+        <div class="country">
+            <pre>Daraz International                                                                       Follow Us</pre>
+            
+            </div>
+        <div class="footer">
+                <div class="flag">
+                    <img src="f1.png" alt="">
+                </div>
+                <div class="flag">
+                    <img src="f2.png" alt="">
+                </div>
+                <div class="flag">
+                    <img src="f3.png" alt="">
+                </div>
+                <div class="flag">
+                    <img src="f4.png" alt="">
+                </div>
+            <div class="follow">
+                <div class="flag">
+                    <img src="face.png" alt="">
+                </div>
+                <div class="flag">
+                    <img src="twi.png" alt="">
+                </div>
+                <div class="flag">
+                    <img src="inst.png" alt="">
+                </div>
+                <div class="flag">
+                    <img src="you.png" alt="">
+                </div>
+            </div>
+            <div class="last"><p> &#169; Daraz 2025</p></div>
+        </div>
+    </footer>
+</body>
+</html>
