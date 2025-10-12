@@ -1,625 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daraz.pk</title>
-    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
-    <style>
-        *{
-            margin: 0%;
-            padding: 0%;
-            box-sizing: border-box;
-            font-family: sans-serif;
-        }
-        html,body{
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(236, 234, 234, 0.655);
-        }
-        .header{
-            width: 100%;
-            height: 20px;
-            background-color: orangered;
-            position: fixed;
-        }
-        .header ul{
-            display: flex;
-            justify-content: end;
-            align-items: center;
-        }
-        .header ul li{
-            list-style: none;
-            font-size: 12px;
-            font-weight: lighter;
-            margin: 5px 25px;
-            color: white;
-            cursor: pointer;
-        }
-        .header ul li:hover{
-            color: rgb(255, 189, 66);
-        }
-        .fake-header{
-            width: 100%;
-            height: 20px;
-            background-color: orangered;
-        }
-        nav{
-            width: 100%;
-            height: 120px;
-            background-color: orangered;
-            display: flex;
-            position: fixed;
-        }
-        nav .logo{
-            width: 150px;
-            height: 130px;
-            object-fit: cover;
-            overflow: hidden;
-            margin: 40px 70px;
-            cursor: pointer;
-        }
-        nav .logo img{
-            width: 100%;
-            height: 1000;
-        }
-        nav .search-bar{
-            background-color: white;
-            width: 550px;
-            height: 48px;
-            margin-top: 40px;
-            padding: 15px;
-            color: gray;
-            font-size: small;
-            display: flex;
-        }
-        nav p{
-            color: orangered;
-            background-color: rgb(255, 210, 188);
-            font-size: 1.4rem;
-            font-weight: 200;
-            width: 50px;
-            height: 48px;
-            margin-top: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-        nav .icon{
-            margin-top: 50px;
-            font-size: 1.9rem;
-            margin-left: 40px;
-            color: white;
-            cursor: pointer;
-        }
-        .fake-nav{
-            width: 100%;
-            height: 120px;
-            background-color: orangered;
-        }
-        .section-one{
-            width: 85%;
-            height: 400px;
-            object-fit: cover;
-            overflow: hidden;
-            margin-left: 35px;
-            cursor: pointer;
-        }
-        .section-one img{
-            width: 100%;
-            height: 100%;
-        }
-        .section-two{
-            width: 95%;
-            height: 150px;
-            object-fit: cover;
-            overflow: hidden;
-            margin-left: 35px;
-            margin-top: 10px;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        .section-two img{
-            width: 100%;
-            height: 100%;
-        }
-        .section-three p{
-            margin: 5px 0;
-            margin-left: 35px;
-            font-size: x-large;
-            color: black;
-        }
-        .section-three .head{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: white;
-            width: 95%;
-            height: 60px;
-            border-bottom: 1.1px rgba(166, 166, 166, 0.555) solid;
-            margin-left: 35px;
-            color: orangered;
-        }
-        .section-three .head small{
-            margin-left: 18px;
-            font-weight: bold;
-        }
-        .section-three .head .button{
-            padding: 10px;
-            border: orangered 1px solid;
-            margin-right: 12px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        .section-four .box{
-            width: 95%;
-            height: 360px;
-            margin-left: 35px;
-            background-color: white;
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-            margin-top: 3px;
-        }
-        .section-four .img{
-            width: 185px;
-            height: 320px;
-            object-fit: cover;
-            overflow: hidden;
-            background-color: white;
-            cursor: pointer;
-        }
-        .section-four .img img{
-            width: 100%;
-            height: 65%;
-        }
-        .section-four .img p{
-            margin-top: 3px;
-            margin-left: 9px;
-            font-size: medium;
-            margin-bottom: 10px;
-        }
-        .section-four .img big{
-            color: orangered;
-            margin-left: 9px;
-        }
-        .section-four .img del{
-            margin-left: 9px;
-            margin-top: 10px;
-        }
-        span{
-            color: orangered;
-        }
-        .section-five p{
-            margin-bottom: 10px;
-            margin-left: 35px;
-            font-size: xx-large;
-        }
-        .section-five .box1{
-            width: 95%;
-            height: 165px;
-            background-color: white;
-            margin-left: 35px;
-            display: flex;
-        }
-        .section-five .shape{
-            width: 202px;
-            height: 165px;
-            background-color: white;
-            border-left: 1px solid rgba(166, 166, 166, 0.555);
-            border-right: 1px solid rgba(166, 166, 166, 0.555);
-            cursor: pointer;
-        }
-        .section-five .shape .pic{
-            width: 110px;
-            height: 100px;
-            border: 1px solid white;
-            margin-top: 20px;
-            margin-left: 45px;
-            object-fit: cover;
-            overflow: hidden;
-        }
-        .section-five .pic img{
-            width: 100%;
-            height: 100%;
-        }
-        .section-five .shape p{
-            font-size: 15px;
-            margin-left: 54px;
-            color: black;
-            margin-top: 7px;
-        }
-        .section-six .box2{
-            width: 95%;
-            height: 165px;
-            background-color: white;
-            margin-left: 35px;
-            display: flex;
-        }
-        .section-six .shape-again{
-            width: 202px;
-            height: 165px;
-            background-color: white;
-            border-left: 1px solid rgba(166, 166, 166, 0.555);
-            border-right: 1px solid rgba(166, 166, 166, 0.555);
-            border-top: 1px solid rgba(166, 166, 166, 0.555);
-            cursor: pointer;
-        }
-        .section-six .shape-again .pic-again{
-            width: 110px;
-            height: 100px;
-            border: 1px solid white;
-            margin-top: 20px;
-            margin-left: 45px;
-            object-fit: cover;
-            overflow: hidden;
-        }
-        .section-six .pic-again img{
-            width: 100%;
-            height: 100%;
-        }
-        .section-six .shape-again p{
-            font-size: 15px;
-            margin-left: 54px;
-            color: black;
-            margin-top: 7px;
-        }
-        .section-seven{
-            display: flex;
-            justify-content: center;
-            margin-top: 50px;
-        }
-        .section-seven .last-b{
-            width: 450px;
-            height: 40px;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: large;
-            border: 1px solid rgba(0, 186, 248, 0.749);
-            color: rgba(0, 186, 248, 0.749);
-            cursor: pointer;
-        }
-        .section-last{
-            display: flex;
-            justify-content: space-around;
-        }
-        .section-last .part1{
-            margin-top: 80px;
-            color: rgb(0, 0, 57);
-        }
-        .section-last .part1 h3{
-            margin-bottom: 10px;
-            color: rgb(0, 0, 57);
-        }
-        .section-last .part1 p{
-            font-size: 12px;
-            font-weight: lighter;
-            margin-top: 5px;
-            cursor: pointer;
-        }
-        .section-last .part2{
-            margin-top: 80px;
-            color: rgb(0, 0, 57); 
-        }
-        .section-last .part2 h3{
-            margin-bottom: 10px;
-            color: rgb(0, 0, 57);
-        }
-        .section-last .part2 p{
-            font-size: 12px;
-            font-weight: lighter;
-            margin-top: 5px;
-            cursor: pointer;
-        }
-        .section-last .part3{
-            display: flex;
-            margin-top: 80px;
-        }
-        .section-last .photo{
-            width: 110px;
-            height: 60px;
-            object-fit: cover;
-            overflow: hidden;
-            margin-left: 15px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        .section-last .photo img{
-            width: 100%;
-            height: 100%;
-        }
-        .country pre{
-            margin-top: 210px;
-            width: 100%;
-            background-color: white;
-            color: black;
-            padding: 15px;
-            font-size: large;
-        }
-        .footer{
-            width: 100%;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            background-color: white;
-        }
-        .footer .flag{
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            overflow: hidden;
-            border-radius: 50%;
-            display: flex;
-            cursor: pointer;
-            margin-left: 30px;
-        }
-        .footer .flag img{
-            width: 100%;
-            height: 100%;
-        }
-        .footer .follow{
-            display: flex;
-            margin-left: 160px;
-        }
-        .footer .last{
-            margin-left: 250px;
-            font-size: larger;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daraz.pk Clone</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header>
-        <div class="header">
-            <ul>
-                <li>SAVE MORE ON APP</li>
-                <li>SALE DARAZ</li>
-                <li>HELP & SUPPORT</li>
-                <li>LOGIN</li>
-                <li>SIGN UP</li>
-                <li>Change Language</li>
-            </ul>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Top Header -->
+  <header class="fixed top-0 left-0 w-full bg-orange-500 text-white text-[12px] z-50">
+    <ul class="flex flex-wrap justify-end items-center gap-4 py-1 px-6">
+      <li class="hover:text-yellow-300 cursor-pointer">SAVE MORE ON APP</li>
+      <li class="hover:text-yellow-300 cursor-pointer">SALE DARAZ</li>
+      <li class="hover:text-yellow-300 cursor-pointer">HELP & SUPPORT</li>
+      <li class="hover:text-yellow-300 cursor-pointer">LOGIN</li>
+      <li class="hover:text-yellow-300 cursor-pointer">SIGN UP</li>
+      <li class="hover:text-yellow-300 cursor-pointer">Change Language</li>
+    </ul>
+  </header>
+
+  <!-- Fake Header Space -->
+  <div class="h-[25px]"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="fixed top-[25px] left-0 w-full bg-orange-500 flex flex-col md:flex-row md:items-center md:justify-between px-6 py-4 z-40">
+    <div class="flex items-center gap-4">
+      <!-- Logo -->
+      <div class="w-[120px] md:w-[150px] cursor-pointer">
+        <img src="3b870cb043c7f8a9741cbf66329e294e.png" alt="Daraz Logo" class="w-full h-auto">
+      </div>
+      <!-- Search Bar -->
+      <div class="flex bg-white items-center rounded-md overflow-hidden w-full max-w-[500px]">
+        <input type="text" placeholder="Search in Daraz" class="w-full px-3 py-2 text-gray-500 text-sm focus:outline-none">
+        <div class="text-orange-500 bg-orange-100 p-2 text-xl cursor-pointer"><i class="ri-search-line"></i></div>
+      </div>
+    </div>
+
+    <!-- Cart Icon -->
+    <div class="flex justify-center md:justify-end mt-3 md:mt-0 text-white text-2xl cursor-pointer">
+      <i class="ri-shopping-cart-line"></i>
+    </div>
+  </nav>
+
+  <!-- Fake Navbar Space -->
+  <div class="h-[90px] md:h-[130px]"></div>
+
+    <!-- Section One - Main Banner -->
+  <section class="w-full flex justify-center px-4">
+    <div class="w-full max-w-[1200px] h-auto rounded-lg overflow-hidden shadow-md cursor-pointer">
+      <img src="daraz img.jpg" alt="Main Banner" class="w-full h-auto object-cover">
+    </div>
+  </section>
+
+  <!-- Section Two - Sub Banner -->
+  <section class="w-full flex justify-center px-4 mt-4">
+    <div class="w-full max-w-[1200px] h-auto rounded-lg overflow-hidden shadow-md cursor-pointer">
+      <img src="daraz img2.jpg" alt="Sub Banner" class="w-full h-auto object-cover">
+    </div>
+  </section>
+
+  <!-- Flash Sale Title -->
+  <section class="w-full mt-6 px-6">
+    <p class="text-2xl font-semibold text-gray-800">Flash Sale</p>
+    <div class="flex flex-col sm:flex-row justify-between items-center bg-white border-b border-gray-300 mt-3 py-3 px-4 rounded-md shadow-sm">
+      <small class="text-orange-500 font-bold text-sm sm:text-base">On Sale Now</small>
+      <button class="text-orange-500 border border-orange-500 rounded-md px-4 py-1 text-sm sm:text-base hover:bg-orange-500 hover:text-white transition-all duration-300">
+        SHOW ALL PRODUCTS
+      </button>
+    </div>
+  </section>
+
+    <!-- 🟠 Section Four - Product Grid -->
+  <section class="w-full flex justify-center px-4 mt-6">
+    <div class="w-full max-w-[1200px] bg-white rounded-lg shadow-md p-4">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        
+        <!-- Product Card 1 -->
+        <div class="bg-white rounded-md overflow-hidden shadow hover:shadow-lg transition cursor-pointer">
+          <img src="img01.jpg" alt="Product 1" class="w-full h-40 object-cover">
+          <div class="p-2">
+            <p class="text-sm text-gray-800 leading-tight mb-1">Chia Seeds 120g Organic Export Quality</p>
+            <p class="text-orange-500 font-semibold">Rs.196</p>
+            <p class="text-xs text-gray-500"><del>Rs.499</del> <span class="text-orange-500">-61%</span></p>
+          </div>
         </div>
-        <div class="fake-header"></div>
-        <nav>
-            <div class="logo">
-                <img src="3b870cb043c7f8a9741cbf66329e294e.png" alt="">
-            </div>
-            <div class="search-bar">Search in Daraz</div>
-            <p><i class="ri-search-line"></i></p>
-            <div class="icon"><i class="ri-shopping-cart-line"></i></div>
-        </nav>
-        <div class="fake-nav"></div>
-    </header>
-    <main>
-        <section>
-            <div class="section-one">
-                <img src="daraz img.jpg" alt="">
-            </div>
-            <div class="section-two">
-                <img src="daraz img2.jpg" alt="">
-            </div>
-            <div class="section-three">
-                <p>Flash Sale</p>
-                <div class="head">
-                    <small>On Sale Now</small>
-                    <div class="button">SHOW ALL PRODUCTS</div>
-                </div>
-            </div>
-            <div class="section-four">
-                <div class="box">
-                    <div class="img">
-                        <img src="img01.jpg" alt="">
-                        <p>Chia Seeds 120g Organic <br> Export Quality</p>
-                        <big>Rs.196</big>
-                        <br>
-                        <small><del>Rs.499</del><span>-61%</span></small>
-                    </div>
-                    <div class="img">
-                        <img src="9ada4627a1293b0543cb26c35373e70c.png_400x400q80.png" alt="">
-                        <p>CHiQ- SDH-18RD (20,000 Plus More BTUs)- 1.5 Ton</p>
-                        <big>Rs.145,999</big>
-                        <br>
-                        <small><del>Rs.193,999</del><span>-25%</span></small>
-                    </div>
-                    <div class="img">
-                        <img src="img2.png" alt="">
-                        <p>Airpod Pro Air Pro TWS Airpods Wireless Earbuds</p>
-                        <big>Rs.929</big>
-                        <br>
-                        <small><del>Rs.3999</del><span>-77%</span></small>
-                    </div>
-                    <div class="img">
-                        <img src="img3.jpg" alt="">
-                        <p>M10 , A6s , F2 earbuds Headphones,Handfree,EarPhone, Bluetooth</p>
-                        <big>Rs.374</big>
-                        <br>
-                        <small><del>Rs.999</del><span>-63%</span></small>
-                    </div>
-                    <div class="img">
-                        <img src="img4.jpg" alt="">
-                        <p>AirPods_Pro (2nd Generation) Titanium Wireless Earbuds,</p>
-                        <big>Rs.787</big>
-                        <br>
-                        <small><del>Rs.4000</del><span>-80%</span></small>
-                    </div>
-                    <div class="img">
-                        <img src="img5.jpg" alt="">
-                        <p>TWS I12 & i7s Airpods with Super Sound & High</p>
-                        <big>Rs.1243</big>
-                        <br>
-                        <small><del>Rs.3999</del><span>-69%</span></small>
-                    </div>
-                </div>
-                <div class="section-five">
-                    <p>Categories</p>
-                    <div class="box1">
-                        <div class="shape">
-                            <div class="pic">
-                                <img src="ed.jpg" alt="">
-                            </div>
-                            <p>3D Printers</p>
-                        </div>
-                        <div class="shape">
-                            <div class="pic">
-                                <img src="pasta.jpg" alt="">
-                            </div>
-                            <p>Passta Noddels & <br> Pizza Tools</p>
-                        </div>
-                        <div class="shape">
-                            <div class="pic">
-                                <img src="pots.jpg" alt="">
-                            </div>
-                            <p>Casserole Pots</p>
-                        </div>
-                        <div class="shape">
-                            <div class="pic">
-                                <img src="replace.png" alt="">
-                            </div>
-                            <p>Replacement</p>
-                        </div>
-                        <div class="shape">
-                            <div class="pic">
-                                <img src="screen.jpg" alt="">
-                            </div>
-                            <p>Screen Protector</p>
-                        </div>
-                        <div class="shape">
-                            <div class="pic">
-                                <img src="toy.jpg" alt="">
-                            </div>
-                            <p>Toy Boxes & <br>
-                            Organisers</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-six">
-                    <div class="box2">
-                        <div class="shape-again">
-                            <div class="pic-again">
-                                <img src="sim.jpg" alt="">
-                            </div>
-                            <p>SIM Tools</p>
-                        </div>
-                        <div class="shape-again">
-                            <div class="pic-again">
-                                <img src="equ.jpg" alt="">
-                            </div>
-                            <p>Equipment Bags</p>
-                        </div>
-                        <div class="shape-again">
-                            <div class="pic-again">
-                                <img src="heat.jpg" alt="">
-                            </div>
-                            <p>Heatsinks</p>
-                        </div>
-                        <div class="shape-again">
-                            <div class="pic-again">
-                                <img src="hoodies.jpg" alt="">
-                            </div>
-                            <p>Hoodies & <br> Sweetshirts</p>
-                        </div>
-                        <div class="shape-again">
-                            <div class="pic-again">
-                                <img src="ds.jpg" alt="">
-                            </div>
-                            <p>Dining Sets</p>
-                        </div>
-                        <div class="shape-again">
-                            <div class="pic-again">
-                                <img src="micro.jpg" alt="">
-                            </div>
-                            <p>Microphones</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-seven">
-                    <div class="last-b"><p>LOAD MORE</p></div>
-                </div>
-                <div class="section-last">
-                    <div class="part1">
-                        <h3>Customer Care</h3>
-                        <p>Help Center</p>
-                        <p>How To Buy</p>
-                        <p>Contact Us</p>
-                        <p>Daraz Pick Up Points</p>
-                        <p>Daraz Shop</p>
-                        <p>Purchase Protection</p>
-                        <p>Returns & Refunds</p>
-                        <p>Corporate & Bluck Purchasing</p>
-                    </div>
-                    <div class="part2">
-                        <h3>Daraz</h3>
-                        <p>About Us</p>
-                        <p>Digital Payments</p>
-                        <p>Daraz Donates</p>
-                        <p>Daraz Blog</p>
-                        <p>Terms & Conditions</p>
-                        <p>Privacy Policy</p>
-                        <p>NTN_Number : 4012186-6</p>
-                        <p>Online Shopping App</p>
-                        <p>Sell on Daraz</p>
-                    </div>
-                    <div class="part3">
-                        <div class="icon1">
-                            <div class="photo">
-                                <img src="appstore.png" alt="">
-                            </div>
-                            <div class="photo">
-                                <img src="google.png" alt="">
-                            </div>
-                        </div>
-                        <div class="icon2">
-                            <div class="photo">
-                                <img src="gallery.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </section>
-    </main>
-    <footer>
-        <div class="country">
-            <pre>Daraz International                                                                       Follow Us</pre>
-            
-            </div>
-        <div class="footer">
-                <div class="flag">
-                    <img src="f1.png" alt="">
-                </div>
-                <div class="flag">
-                    <img src="f2.png" alt="">
-                </div>
-                <div class="flag">
-                    <img src="f3.png" alt="">
-                </div>
-                <div class="flag">
-                    <img src="f4.png" alt="">
-                </div>
-            <div class="follow">
-                <div class="flag">
-                    <img src="face.png" alt="">
-                </div>
-                <div class="flag">
-                    <img src="twi.png" alt="">
-                </div>
-                <div class="flag">
-                    <img src="inst.png" alt="">
-                </div>
-                <div class="flag">
-                    <img src="you.png" alt="">
-                </div>
-            </div>
-            <div class="last"><p> &#169; Daraz 2025</p></div>
+
+        <!-- Product Card 2 -->
+        <div class="bg-white rounded-md overflow-hidden shadow hover:shadow-lg transition cursor-pointer">
+          <img src="9ada4627a1293b0543cb26c35373e70c.png_400x400q80.png" alt="Product 2" class="w-full h-40 object-cover">
+          <div class="p-2">
+            <p class="text-sm text-gray-800 leading-tight mb-1">CHiQ- SDH-18RD (20,000 Plus More BTUs)- 1.5 Ton</p>
+            <p class="text-orange-500 font-semibold">Rs.145,999</p>
+            <p class="text-xs text-gray-500"><del>Rs.193,999</del> <span class="text-orange-500">-25%</span></p>
+          </div>
         </div>
-    </footer>
+
+        <!-- Product Card 3 -->
+        <div class="bg-white rounded-md overflow-hidden shadow hover:shadow-lg transition cursor-pointer">
+          <img src="img2.png" alt="Product 3" class="w-full h-40 object-cover">
+          <div class="p-2">
+            <p class="text-sm text-gray-800 leading-tight mb-1">Airpod Pro Air Pro TWS Airpods Wireless Earbuds</p>
+            <p class="text-orange-500 font-semibold">Rs.929</p>
+            <p class="text-xs text-gray-500"><del>Rs.3999</del> <span class="text-orange-500">-77%</span></p>
+          </div>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="bg-white rounded-md overflow-hidden shadow hover:shadow-lg transition cursor-pointer">
+          <img src="img3.jpg" alt="Product 4" class="w-full h-40 object-cover">
+          <div class="p-2">
+            <p class="text-sm text-gray-800 leading-tight mb-1">M10 , A6s , F2 earbuds Headphones, Handfree, EarPhone, Bluetooth</p>
+            <p class="text-orange-500 font-semibold">Rs.374</p>
+            <p class="text-xs text-gray-500"><del>Rs.999</del> <span class="text-orange-500">-63%</span></p>
+          </div>
+        </div>
+
+        <!-- Product Card 5 -->
+        <div class="bg-white rounded-md overflow-hidden shadow hover:shadow-lg transition cursor-pointer">
+          <img src="img4.jpg" alt="Product 5" class="w-full h-40 object-cover">
+          <div class="p-2">
+            <p class="text-sm text-gray-800 leading-tight mb-1">AirPods_Pro (2nd Generation) Titanium Wireless Earbuds</p>
+            <p class="text-orange-500 font-semibold">Rs.787</p>
+            <p class="text-xs text-gray-500"><del>Rs.4000</del> <span class="text-orange-500">-80%</span></p>
+          </div>
+        </div>
+
+        <!-- Product Card 6 -->
+        <div class="bg-white rounded-md overflow-hidden shadow hover:shadow-lg transition cursor-pointer">
+          <img src="img5.jpg" alt="Product 6" class="w-full h-40 object-cover">
+          <div class="p-2">
+            <p class="text-sm text-gray-800 leading-tight mb-1">TWS I12 & i7s Airpods with Super Sound & High</p>
+            <p class="text-orange-500 font-semibold">Rs.1243</p>
+            <p class="text-xs text-gray-500"><del>Rs.3999</del> <span class="text-orange-500">-69%</span></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- 🟠 Section Five - Categories -->
+  <section class="w-full mt-10 px-4">
+    <p class="text-2xl font-semibold text-gray-800 mb-4">Categories</p>
+
+    <div class="w-full max-w-[1200px] mx-auto bg-white rounded-lg shadow-md p-4">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+
+        <!-- Category 1 -->
+        <div class="flex flex-col items-center border border-gray-200 rounded-md p-3 hover:shadow-md transition cursor-pointer">
+          <div class="w-[90px] h-[90px] mb-2 overflow-hidden rounded-md">
+            <img src="ed.jpg" alt="3D Printers" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm text-gray-700 text-center">3D Printers</p>
+        </div>
+
+        <!-- Category 2 -->
+        <div class="flex flex-col items-center border border-gray-200 rounded-md p-3 hover:shadow-md transition cursor-pointer">
+          <div class="w-[90px] h-[90px] mb-2 overflow-hidden rounded-md">
+            <img src="pasta.jpg" alt="Pasta Tools" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm text-gray-700 text-center">Passta Noodles & Pizza Tools</p>
+        </div>
+
+        <!-- Category 3 -->
+        <div class="flex flex-col items-center border border-gray-200 rounded-md p-3 hover:shadow-md transition cursor-pointer">
+          <div class="w-[90px] h-[90px] mb-2 overflow-hidden rounded-md">
+            <img src="pots.jpg" alt="Casserole Pots" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm text-gray-700 text-center">Casserole Pots</p>
+        </div>
+
+        <!-- Category 4 -->
+        <div class="flex flex-col items-center border border-gray-200 rounded-md p-3 hover:shadow-md transition cursor-pointer">
+          <div class="w-[90px] h-[90px] mb-2 overflow-hidden rounded-md">
+            <img src="replace.png" alt="Replacement" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm text-gray-700 text-center">Replacement</p>
+        </div>
+
+        <!-- Category 5 -->
+        <div class="flex flex-col items-center border border-gray-200 rounded-md p-3 hover:shadow-md transition cursor-pointer">
+          <div class="w-[90px] h-[90px] mb-2 overflow-hidden rounded-md">
+            <img src="screen.jpg" alt="Screen Protector" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm text-gray-700 text-center">Screen Protector</p>
+        </div>
+
+        <!-- Category 6 -->
+        <div class="flex flex-col items-center border border-gray-200 rounded-md p-3 hover:shadow-md transition cursor-pointer">
+          <div class="w-[90px] h-[90px] mb-2 overflow-hidden rounded-md">
+            <img src="toy.jpg" alt="Toy Boxes" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm text-gray-700 text-center">Toy Boxes & Organisers</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- 🟠 Section Six - More Categories -->
+  <section class="w-full mt-10 px-4">
+    <div class="w-full max-w-[1200px] mx-auto bg-white rounded-lg shadow-md p-4">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+
+        <!-- Item 1 -->
+        <div class="flex flex-col items-center border border-gray-200 rounded-md p-3 hover:shadow-md transition cursor-pointer">
+          <div class="w-[90px] h-[90px] mb-2 overflow-hidden rounded-md">
+            <img src="sim.jpg" alt="SIM Tools" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm text-gray-700 text-center">SIM Tools</p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="flex flex-col items-center border border-gray-200 rounded-md p-3 hover:shadow-md transition cursor-pointer">
+          <div class="w-[90px] h-[90px] mb-2 overflow-hidden rounded-md">
+            <img src="equ.jpg" alt="Equipment Bags" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm text-gray-700 text-center">Equipment Bags</p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="flex flex-col items-center border border-gray-200 rounded-md p-3 hover:shadow-md transition cursor-pointer">
+          <div class="w-[90px] h-[90px] mb-2 overflow-hidden rounded-md">
+            <img src="heat.jpg" alt="Heatsinks" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm text-gray-700 text-center">Heatsinks</p>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="flex flex-col items-center border border-gray-200 rounded-md p-3 hover:shadow-md transition cursor-pointer">
+          <div class="w-[90px] h-[90px] mb-2 overflow-hidden rounded-md">
+            <img src="hoodies.jpg" alt="Hoodies" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm text-gray-700 text-center">Hoodies & Sweatshirts</p>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="flex flex-col items-center border border-gray-200 rounded-md p-3 hover:shadow-md transition cursor-pointer">
+          <div class="w-[90px] h-[90px] mb-2 overflow-hidden rounded-md">
+            <img src="ds.jpg" alt="Dining Sets" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm text-gray-700 text-center">Dining Sets</p>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="flex flex-col items-center border border-gray-200 rounded-md p-3 hover:shadow-md transition cursor-pointer">
+          <div class="w-[90px] h-[90px] mb-2 overflow-hidden rounded-md">
+            <img src="micro.jpg" alt="Microphones" class="w-full h-full object-cover">
+          </div>
+          <p class="text-sm text-gray-700 text-center">Microphones</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- 🟠 Section Seven - Load More Button -->
+  <section class="w-full flex justify-center mt-10 px-4">
+    <button class="text-sky-500 border border-sky-400 px-8 py-2 rounded-md text-base font-medium hover:bg-sky-500 hover:text-white transition-all duration-300">
+      LOAD MORE
+    </button>
+  </section>
+
+    <!-- 🟠 Section Seven - Load More Button (Improved) -->
+  <section class="w-full flex justify-center mt-12 px-4">
+    <button class="text-sky-500 border border-sky-400 px-10 py-3 rounded-lg text-base font-medium 
+                   hover:bg-sky-500 hover:text-white hover:shadow-md transition-all duration-300">
+      LOAD MORE
+    </button>
+  </section>
+
+  <!-- 🟠 Section Last - Footer Information (Improved Design) -->
+  <section class="w-full mt-16 bg-white py-10 shadow-inner">
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between flex-wrap gap-10 px-6">
+
+      <!-- Customer Care -->
+      <div class="flex-1 min-w-[250px]">
+        <h3 class="text-lg font-semibold mb-3 text-gray-900 border-b-2 border-orange-500 w-max pb-1">
+          Customer Care
+        </h3>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li class="hover:text-orange-500 cursor-pointer transition">Help Center</li>
+          <li class="hover:text-orange-500 cursor-pointer transition">How To Buy</li>
+          <li class="hover:text-orange-500 cursor-pointer transition">Contact Us</li>
+          <li class="hover:text-orange-500 cursor-pointer transition">Daraz Pick Up Points</li>
+          <li class="hover:text-orange-500 cursor-pointer transition">Daraz Shop</li>
+          <li class="hover:text-orange-500 cursor-pointer transition">Purchase Protection</li>
+          <li class="hover:text-orange-500 cursor-pointer transition">Returns & Refunds</li>
+          <li class="hover:text-orange-500 cursor-pointer transition">Corporate & Bulk Purchasing</li>
+        </ul>
+      </div>
+
+      <!-- Daraz Info -->
+      <div class="flex-1 min-w-[250px]">
+        <h3 class="text-lg font-semibold mb-3 text-gray-900 border-b-2 border-orange-500 w-max pb-1">
+          Daraz
+        </h3>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li class="hover:text-orange-500 cursor-pointer transition">About Us</li>
+          <li class="hover:text-orange-500 cursor-pointer transition">Digital Payments</li>
+          <li class="hover:text-orange-500 cursor-pointer transition">Daraz Donates</li>
+          <li class="hover:text-orange-500 cursor-pointer transition">Daraz Blog</li>
+          <li class="hover:text-orange-500 cursor-pointer transition">Terms & Conditions</li>
+          <li class="hover:text-orange-500 cursor-pointer transition">Privacy Policy</li>
+          <li class="hover:text-orange-500 cursor-pointer transition">NTN_Number : 4012186-6</li>
+          <li class="hover:text-orange-500 cursor-pointer transition">Online Shopping App</li>
+          <li class="hover:text-orange-500 cursor-pointer transition">Sell on Daraz</li>
+        </ul>
+      </div>
+
+      <!-- App Store Icons -->
+      <div class="flex-1 min-w-[250px] flex flex-col items-center md:items-end">
+        <h3 class="text-lg font-semibold mb-3 text-gray-900 border-b-2 border-orange-500 w-max pb-1">
+          Get Our App
+        </h3>
+        <div class="flex gap-4 mb-3">
+          <div class="md:w-[180px] h-[60px] rounded-lg overflow-hidden shadow cursor-pointer hover:scale-105 transition">
+            <img src="appstore.png" alt="App Store" class="w-full h-full object-cover">
+          </div>
+          <div class="md:w-[180px] h-[60px] rounded-lg overflow-hidden shadow cursor-pointer hover:scale-105 transition">
+            <img src="google.png" alt="Google Play" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <div class="md:w-[180px] h-[60px] rounded-lg overflow-hidden shadow cursor-pointer hover:scale-105 transition">
+          <img src="gallery.png" alt="Gallery App" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- 🟠 Final Footer Section -->
+  <footer class="w-full bg-white mt-10 border-t border-gray-200">
+    
+    <!-- Country & Follow Us Row -->
+    <div class="flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto px-6 py-5">
+      <h4 class="text-gray-800 text-base font-medium mb-3 md:mb-0">
+        Daraz International
+      </h4>
+      <h4 class="text-gray-800 text-base font-medium">
+        Follow Us
+      </h4>
+    </div>
+
+    <!-- Flags + Social Icons -->
+    <div class="flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto px-6 pb-6 border-t border-gray-100 pt-4">
+      
+      <!-- 🌍 Country Flags -->
+      <div class="flex gap-4 mb-4 md:mb-0">
+        <div class="w-[40px] h-[40px] rounded-full overflow-hidden border border-gray-200 shadow cursor-pointer hover:scale-105 transition">
+          <img src="f1.png" alt="Country 1" class="w-full h-full object-cover">
+        </div>
+        <div class="w-[40px] h-[40px] rounded-full overflow-hidden border border-gray-200 shadow cursor-pointer hover:scale-105 transition">
+          <img src="f2.png" alt="Country 2" class="w-full h-full object-cover">
+        </div>
+        <div class="w-[40px] h-[40px] rounded-full overflow-hidden border border-gray-200 shadow cursor-pointer hover:scale-105 transition">
+          <img src="f3.png" alt="Country 3" class="w-full h-full object-cover">
+        </div>
+        <div class="w-[40px] h-[40px] rounded-full overflow-hidden border border-gray-200 shadow cursor-pointer hover:scale-105 transition">
+          <img src="f4.png" alt="Country 4" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <!-- 📱 Social Icons -->
+      <div class="flex gap-4">
+        <div class="w-[40px] h-[40px] rounded-full overflow-hidden border border-gray-200 shadow cursor-pointer hover:scale-105 transition">
+          <img src="face.png" alt="Facebook" class="w-full h-full object-cover">
+        </div>
+        <div class="w-[40px] h-[40px] rounded-full overflow-hidden border border-gray-200 shadow cursor-pointer hover:scale-105 transition">
+          <img src="twi.png" alt="Twitter" class="w-full h-full object-cover">
+        </div>
+        <div class="w-[40px] h-[40px] rounded-full overflow-hidden border border-gray-200 shadow cursor-pointer hover:scale-105 transition">
+          <img src="inst.png" alt="Instagram" class="w-full h-full object-cover">
+        </div>
+        <div class="w-[40px] h-[40px] rounded-full overflow-hidden border border-gray-200 shadow cursor-pointer hover:scale-105 transition">
+          <img src="you.png" alt="YouTube" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-gray-200 py-4 text-center text-gray-600 text-sm">
+      © 2025 Daraz Clone | Designed by Muhammad Yasir MAIB
+    </div>
+
+  </footer>
+  
 </body>
 </html>
+
